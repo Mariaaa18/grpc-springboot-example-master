@@ -1,0 +1,18 @@
+syntax="proto3"; //proto 2 is not supported anymore
+option java_multiple_files=true;
+
+option java_package= "via.sdj3.grpcspringbootx.protobuf";
+
+//service definitions
+service SlautherHouse{
+  rpc getAnimals(RequestText) returns(ResponseText);
+  rpc getProducts(RequestText) returns(ResponseText);
+}
+
+message RequestText {
+  string input_text=1; //every field should have unique numbers
+}
+
+message ResponseText{
+  repeated string output_text=1;
+}
